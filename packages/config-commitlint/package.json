@@ -1,0 +1,31 @@
+{
+  "name": "config-commitlint",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "commitlint配置",
+  "keywords": [
+    "commitlint"
+  ],
+  "author": "evanfang",
+  "homepage": "https://github.com/evanfang0054/dumi-monorepo-template#readme",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanfang0054/dumi-monorepo-template.git",
+    "directory": "packages/config-commitlint"
+  },
+  "bugs": {
+    "url": "https://github.com/evanfang0054/dumi-monorepo-template/issues"
+  },
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

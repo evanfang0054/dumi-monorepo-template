@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "npmClient": "pnpm",
+  "version": "independent",
+  "command": {
+    "publish": {
+      "npmClient": "npm",
+      "message": "chore(release): publish",
+      "registry": "https://npm.evanfang.com.cn/"
+    }
+  }
+}
