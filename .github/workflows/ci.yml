@@ -22,11 +22,35 @@ jobs:
         with:
           node-version: 18.16.0
 
+      # 安装 pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      # 获取 pnpm store 目录
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_ENV
+
+      # 设置 pnpm 缓存
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # 安装依赖
+      - name: Install dependencies
+        run: pnpm install
+
       # 打包代码
       - name: Build Project
-        run: |
-          pnpm init
-          pnpm run build
+        run: pnpm run build
 
       # 部署到github
       - name: Deploy to Github
