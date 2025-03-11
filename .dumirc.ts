@@ -11,12 +11,13 @@ export default defineConfig({
     { name: 'build-time', content: Date.now().toString() },
   ],
   https: {},
+  favicons: [`${process.env.NODE_ENV === 'production' ? `/${repo}/` : '/'}favicon.ico`],
   themeConfig: {
     name: 'EvanFang',
     socialLinks: {
       github: 'https://github.com/evanfang0054/dumi-monorepo-template',
     },
-    logo: '/logo.png',
+    logo: `${process.env.NODE_ENV === 'production' ? `/${repo}/` : '/'}logo.png`,
     // rtl: true,
     prefersColor: { default: 'auto' },
     footer: `Copyright © ${new Date().getFullYear()} EvanFang`
